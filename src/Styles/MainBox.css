@@ -1,0 +1,96 @@
+/* Logobutton */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira Code:wght@600&display=swap");
+
+.Main{
+}
+
+.imageBox {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 22px 23px 78px 26px;
+    margin-right: 65px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: fit-content;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.Button-Box{
+    padding: 24px 48px 23px 49px;
+    margin-right: 99px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 202px;
+    height: %;
+}
+
+.innerBox{
+    padding: 21px 21px 21px 22px;
+  margin-bottom: 58px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.15);
+  height: 362px;
+  width: fit-content;
+}
+
+.flex-col-hcenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-side {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 554px;
+    height: 100%;
+}
+
+.flex-col-hstart-vstart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.clip-contents {
+    overflow: hidden;
+}
+
+.txt-614 {
+      font-size: 20px;
+    font-family: Fira Code, monospace;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    width: 103px;
+    height: 31px;
+    word-wrap: break-word;
+}
+
+.img_style{
+    width: 319px;
+    height: 100%;
+}
+
+.mainBox {
+    padding: 50px 48px 50px 55px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+  
+  
+}
+  
+.flex-row-vcenter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
