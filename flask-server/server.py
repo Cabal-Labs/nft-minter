@@ -23,7 +23,7 @@ CORS(app)
 def image():
     account = request.args.get('account')
     answers = stability_api.generate(
-    prompt="detailed artistic paiting with futuristic," + account,
+    prompt="detailed artistic paiting with futuristic human, digital art," + account,
     steps=30, # defaults to 50 if not specified
     )
 

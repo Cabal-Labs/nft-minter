@@ -11,7 +11,13 @@ export default function Navbar() {
           alt="Not Found"
           className="untitled-artwork-11"
         />
-        <ConnectButton/>
+        
+        <div >
+          <ConnectButton/>
+        </div>
+        
+       
+        
       </div>
     </div>
   )

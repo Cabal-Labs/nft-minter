@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
+    "@mui/styles": "^5.10.10",
     "@openzeppelin/contracts": "^4.7.3",
     "@rainbow-me/rainbowkit": "^0.7.3",
     "@testing-library/jest-dom": "^5.16.5",
@@ -12,6 +15,7 @@
     "nft.storage": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-material-ui-carousel": "^3.4.2",
     "react-scripts": "5.0.1",
     "stability-client": "^1.6.1",
     "stability-ts": "^1.3.0",

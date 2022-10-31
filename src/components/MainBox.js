@@ -5,13 +5,22 @@ import exampleIMG from "./../exampleIMG.json"
 import {NFTStorage, File} from "nft.storage";
 import {ethers} from "ethers"
 import AICabalNFT from "./../ABIs/AICabalNFT.json"
+import Carousel, {next} from 'react-material-ui-carousel'
+import { Paper, Button } from '@mui/material'
 
 
 
 export default function MainBox() {
+  const { address, isConnected } = useAccount()
+  const [_image,setImage] = useState([{
+    id: -1,
+    src: `${exampleIMG.example}`
+  }])
+  const [counter, setCounter] = useState(0)
+  const [current, setCurrent] = useState(0)
 
-    const { address, isConnected } = useAccount()
-    const [_image,setImage] = useState(`${exampleIMG.example}`)
+
+    
 
     function dataURLtoFile(dataurl, filename) {
  
@@ -37,7 +46,7 @@ export default function MainBox() {
       });
 
       try {
-        const d = await dataURLtoFile(`data:image/jpeg;base64,${_image}`, "cabalLabs.jpeg");
+        const d = await dataURLtoFile(`data:image/jpeg;base64,${_image[current].src}`, "cabalLabs.jpeg");
 
         await client.store({
           image: d,
@@ -58,10 +67,12 @@ export default function MainBox() {
           console.log("metadata saved: ", mint)
         })
       } catch(error) {
-        console.log(" couls not safe NFT ", error)
+        console.log(" could not safe NFT ", error)
       }
 
     }
+
+
 
 
     async function AIimage() {
@@ -71,12 +82,22 @@ export default function MainBox() {
         data => {
           console.log(data)
           const img = data.image
-          setImage(img[0])
+          if (counter < 1) {
+            setImage(first =>
+              first.filter(first => {
+                return first.id !== -1;
+              }),
+            );
+          }
+          setImage((_image) => [..._image,{id: counter, src: img[0] }])
+          setCounter(counter + 1)
+          
         }
       )
     }
 
     const onClick = () => {
+      console.log(_image[current])
       storeImage();
     }
     return (
@@ -84,27 +105,45 @@ export default function MainBox() {
       <div className=" flex-col-hstart-vstart clip-contents">
             <div className="imageBox flex-col-hcenter">
                 <div className="innerBox">
-                <img
-                    src={`data:image/jpeg;base64,${_image}`}
-                    alt="Not Found"
-                    className="img_style"
-                />
+
+                <Carousel  
+                autoPlay={false}
+                next={ (next) => {setCurrent(next);} }
+                prev={ (prev) => {setCurrent(prev);} }
+                navButtonsAlwaysVisible={true}
+                >
+                {
+                _image.map( image => <img
+                src={`data:image/jpeg;base64,${image.src}`}
+                alt="Not Found"
+                className="img_style"
+                /> )
+                }
+              </Carousel>
                 </div>
               
                 <div className="flex-row">
-                    <div  onClick={() => {AIimage()}} className="Button-Box">
-                        <p className="txt-614">Generate</p>
+                  { counter < 3
+                    ?<div  onClick={() => {AIimage()}} className="Button-Box">
+                    <p className="txt-614">Generate</p>
                     </div>
+                    :
+                    <div className="Button-Box-disabled">
+                    <p className="txt-614">Generate</p>
+                    </div>
+                  }
+                    
                     <div onClick={() => {onClick();}} className="Button-Box">
                         <p className="txt-614">Mint NFT</p>
                     </div>
                 </div>
             </div>
-            <div className="chat-side">
-                
+           
+          </div>
+           <div className="terminal">
+              <p>hello</p>
             </div>
 
-    </div>
       </div>
     )
 }
