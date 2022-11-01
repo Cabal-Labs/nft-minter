@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  
 }
 
 .flex-hcenter {
@@ -33,6 +34,7 @@
 
 .group-378 {
   height: 100%;
+  width: 100%;
 }
 
 .txt-122 {
@@ -62,6 +64,9 @@
 .untitled-artwork-11 {
   width: 50px;
   height: auto;
-  margin-right: 10%;
-  
+}
+
+.connector{
+  position:absolute;
+  right: 15px;
 }

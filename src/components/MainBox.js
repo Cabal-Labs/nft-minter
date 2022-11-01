@@ -141,7 +141,12 @@ export default function MainBox() {
            
           </div>
            <div className="terminal">
-              <p>hello</p>
+              <h2 style={{position:"relative", left: "35%"}}>Cabal Labs</h2>
+              <p>{">"} Welcome to the Cabal Labs NFT Minter</p>
+              <p>{">"} We use AI to create art just for you</p>
+              <p>{">"} We use your public addres to generate something unique to this account</p>
+              <p>{">"} You can generate up to 3 images, select the one you like and click "Mint NFT"</p>
+
             </div>
 
       </div>

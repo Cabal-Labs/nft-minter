@@ -12,9 +12,12 @@ export default function Navbar() {
           className="untitled-artwork-11"
         />
         
-        <div >
-          <ConnectButton/>
+
+        <div className="connector">
+        <ConnectButton />
         </div>
+        
+    
         
        
         
