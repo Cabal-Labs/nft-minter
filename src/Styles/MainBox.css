@@ -23,12 +23,24 @@
 .Button-Box{
     padding: 14px 28px 13px 29px;
     margin-right: 99px;
+    margin-left: 60px;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.3);
     height: 80%;
     cursor: pointer;
 }
+.Button-Box1{
+    padding: 14px 28px 13px 29px;
+    margin-right: 99px;
+    margin-left: 60px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 80%;
+    cursor: pointer;
+}
+
 
 .Button-Box-disabled{
     padding: 14px 28px 13px 29px;

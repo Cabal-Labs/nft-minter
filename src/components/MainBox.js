@@ -18,6 +18,7 @@ export default function MainBox() {
   }])
   const [counter, setCounter] = useState(0)
   const [current, setCurrent] = useState(0)
+  const [generating, setGenerating] = useState(false)
 
 
     
@@ -76,6 +77,7 @@ export default function MainBox() {
 
 
     async function AIimage() {
+      setGenerating(true)
       fetch( process.env.REACT_APP_API_ADD + address).then(
         res => res.json()
       ).then(
@@ -91,9 +93,11 @@ export default function MainBox() {
           }
           setImage((_image) => [..._image,{id: counter, src: img[0] }])
           setCounter(counter + 1)
-          
+          setGenerating(false)
         }
       )
+      
+      console.log(generating)
     }
 
     const onClick = () => {
