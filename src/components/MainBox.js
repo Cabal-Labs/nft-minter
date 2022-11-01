@@ -123,7 +123,7 @@ export default function MainBox() {
                 </div>
               
                 <div className="flex-row">
-                  { counter < 3
+                  { counter < 3 && isConnected
                     ?<div  onClick={() => {AIimage()}} className="Button-Box">
                     <p className="txt-614">Generate</p>
                     </div>
