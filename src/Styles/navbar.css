@@ -70,3 +70,25 @@
   position:absolute;
   right: 15px;
 }
+
+nav {
+  position: relative;
+  width: 100vw;
+  z-index: 150;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem;
+  flex-wrap: nowrap;
+  background-color: rgba(11, 23, 34, 0.7764705882);
+  
+}
+
+img {
+
+  height: 3.5rem;
+  width: 3.5rem;
+ 
+}

@@ -7,6 +7,7 @@ import {ethers} from "ethers"
 import AICabalNFT from "./../ABIs/AICabalNFT.json"
 import Carousel, {next} from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material'
+import Typer from "./Typer.js"
 
 
 
@@ -19,6 +20,7 @@ export default function MainBox() {
   const [counter, setCounter] = useState(0)
   const [current, setCurrent] = useState(0)
   const [generating, setGenerating] = useState(false)
+  const [terminalCounter, setTerminalCounter] = useState(0)
 
 
     
@@ -105,8 +107,8 @@ export default function MainBox() {
       storeImage();
     }
     return (
-    <div className="mainBox flex-row-vcenter"> 
-      <div className=" flex-col-hstart-vstart clip-contents">
+    <div className= "mainCard"> 
+      <div className="">
             <div className="imageBox flex-col-hcenter">
                 <div className="innerBox">
 
@@ -145,13 +147,14 @@ export default function MainBox() {
            
           </div>
            <div className="terminal">
-              <h2 style={{position:"relative", left: "35%"}}>Cabal Labs</h2>
-              <p>{">"} Welcome to the Cabal Labs NFT Minter</p>
-              <p>{">"} We use AI to create art just for you</p>
-              <p>{">"} We use your public addres to generate something unique to this account</p>
-              <p>{">"} You can generate up to 3 images, select the one you like and click "Mint NFT"</p>
-
-            </div>
+            <br></br>
+            {terminalCounter >=0 && <Typer text={" Welcome!"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true}/>}
+            {terminalCounter >=1 && <Typer text={" We want to thank you for coming"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true}/>}
+            {terminalCounter >=2 && <Typer text={" Here you can find a NFT minter that uses AI to generate an unique art piece for you"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true}/>}
+            {(terminalCounter >=3 && !isConnected)&& <Typer text={" Please connect you wallet..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={false}/>}
+            {(terminalCounter >=3  && isConnected) &&   <Typer text={" You can generate up to 3 pieces, select the one you like and click Mint NFT"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
+            {(terminalCounter >=4  && generating) &&   <Typer text={" Generating..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
+          </div>
 
       </div>
     )

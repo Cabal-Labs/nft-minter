@@ -25,7 +25,7 @@ function App() {
             <Navbar/>
           </div>
       
-          <div className="mainBox ">
+          <div >
             <MainBox/>
           </div>
 
