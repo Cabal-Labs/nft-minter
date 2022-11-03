@@ -157,7 +157,7 @@ export default function MainBox() {
             {(terminalCounter >=3 && !isConnected) && <Typer text={" Please connect you wallet..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={false}/>}
             {(terminalCounter >=3  && isConnected) &&   <Typer text={" You can generate up to 3 pieces, select the one you like and click Mint NFT"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
             {(terminalCounter >=4  && generating) &&   <Typer text={" Generating..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={false} />}
-            {(deployed) && <Typer text={` Deployed! Transaction hash: ${transactionH} `} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
+            {(terminalCounter >=4 && deployed) && <Typer text={` Deployed! Transaction hash: ${transactionH} `} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
           </div>
 
       </div>
