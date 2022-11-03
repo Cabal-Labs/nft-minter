@@ -145,13 +145,21 @@ export default function MainBox() {
 							<p className="txt-614">Generate</p>
 						</div>
 					)}
-					<div
-						onClick={() => {
-							onClick();
-						}}
-						className="Button-Box">
-						<p className="txt-614">Mint NFT</p>
-					</div>
+					{(counter < 1 || deployed) ? (
+						<div className="Button-Box-disabled">
+							<p className="txt-614">Mint NFT</p>
+						</div>
+					) : (
+						<div
+							onClick={() => {
+								onClick();
+							}}
+							className="Button-Box">
+							<p className="txt-614">Mint NFT</p>
+						</div>
+						
+					)}
+					
 				</div>
 			</div>
 			<div className="terminal directions">
@@ -211,6 +219,14 @@ export default function MainBox() {
 				{deployed && (
 					<Typer
 						text={` Deployed! Transaction hash: ${transactionH} `}
+						terminalCounter={terminalCounter}
+						setTerminalCounter={setTerminalCounter}
+						increase={true}
+					/>
+				)}
+				{(deployed && terminalCounter >= 5 )&& (
+					<Typer
+						text={` We hope to see you soon! End of transmission... `}
 						terminalCounter={terminalCounter}
 						setTerminalCounter={setTerminalCounter}
 						increase={true}
