@@ -21,6 +21,8 @@ export default function MainBox() {
   const [current, setCurrent] = useState(0)
   const [generating, setGenerating] = useState(false)
   const [terminalCounter, setTerminalCounter] = useState(0)
+  const [deployed, setDeployed] = useState(false)
+  const [transactionH, setTransactionH] = useState("")
 
 
     
@@ -53,7 +55,7 @@ export default function MainBox() {
 
         await client.store({
           image: d,
-          name:`${address}: Cabal Labs AI Generated NFT`,
+          name:`Cabal Labs AI Generated NFT: ${address}`,
           description:
           "This NFT is created just for you, it uses your wallet addres to come up with art. Welcome to the Cabal...",
         }).then( async (metadata) => {
@@ -65,9 +67,10 @@ export default function MainBox() {
 
           const price = await contract.salePrice();
           const mint = await contract.mintNFT(`https://${metadataArray[2]}.ipfs.w3s.link/${metadataArray[3]}`,{value: price})
-          
 
-          console.log("metadata saved: ", mint)
+          console.log("metadata saved: ", mint.hash)
+          setTransactionH(mint.hash)
+          setDeployed(true)
         })
       } catch(error) {
         console.log(" could not safe NFT ", error)
@@ -151,9 +154,10 @@ export default function MainBox() {
             {terminalCounter >=0 && <Typer text={" Welcome!"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true}/>}
             {terminalCounter >=1 && <Typer text={" We want to thank you for coming"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true}/>}
             {terminalCounter >=2 && <Typer text={" Here you can find a NFT minter that uses AI to generate an unique art piece for you"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true}/>}
-            {(terminalCounter >=3 && !isConnected)&& <Typer text={" Please connect you wallet..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={false}/>}
+            {(terminalCounter >=3 && !isConnected) && <Typer text={" Please connect you wallet..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={false}/>}
             {(terminalCounter >=3  && isConnected) &&   <Typer text={" You can generate up to 3 pieces, select the one you like and click Mint NFT"} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
-            {(terminalCounter >=4  && generating) &&   <Typer text={" Generating..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
+            {(terminalCounter >=4  && generating) &&   <Typer text={" Generating..."} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={false} />}
+            {(deployed) && <Typer text={` Deployed! Transaction hash: ${transactionH} `} terminalCounter={terminalCounter} setTerminalCounter={setTerminalCounter} increase={true} />}
           </div>
 
       </div>
