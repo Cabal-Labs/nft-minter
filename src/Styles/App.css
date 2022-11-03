@@ -1,19 +1,27 @@
 .App {
-  text-align: center;
-  background-image: url("../../public/Assets/cabal_labs.jpg");
-  position:fixed;
-  min-width: 100%;
-  min-height: 100%;
-  background-size: cover;
-  background-position: center;
-
-
+	text-align: center;
+	background-image: url("../../public/Assets/cabal_labs.jpg");
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	overflow: scroll;
+	padding-top: 4rem;
 }
 
-
-
 .flex-row-vcenter {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+h1 {
+	font-family: "Rajdhani", sans-serif;
+	font-weight: 700;
+	color: white;
+	font-size: 4rem;
+	margin: 1rem auto;
 }

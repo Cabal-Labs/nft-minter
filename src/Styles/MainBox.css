@@ -2,145 +2,171 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Fira Code:wght@600&display=swap");
 
-
-
-.imageBox {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 22px 23px 78px 26px;
-    margin-right: 65px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.3);
-    height: fit-content;
+.img_style {
+	border-radius: 0.5rem;
 }
-
 .flex-row {
-    display: flex;
-    flex-direction: row;
-    padding:5px; /* this */
+	display: flex;
+	flex-direction: row;
+	padding: 5px; /* this */
+	margin: 0 auto;
 }
 
-.Button-Box{
-    padding: 14px 28px 13px 29px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
-    height: 80%;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-right: 40px;
+.Button-Box {
+	padding: 1rem 1.75rem;
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.3);
+	height: 80%;
+	cursor: pointer;
+	margin: 0 0.5rem;
+	flex: 1;
 }
 
-
-.Button-Box-disabled{
-    padding: 14px 28px 13px 29px;
-    
-    box-sizing: border-box;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.15);
-    margin-left: 20px;
-    margin-right: 40px;
-    height: 80%;
+.Button-Box-disabled {
+	padding: 1rem 1.75rem;
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius: 0.5rem;
+	height: 80%;
+	margin: 0 0.5rem;
+	flex: 1;
 }
 
-.innerBox{
-    padding: 21px 21px 21px 22px;
-  margin-bottom: 58px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.15);
-  height: 362px;
-  width: 362px;
+.innerBox {
+	padding: 21px 21px 21px 22px;
+	margin-bottom: 58px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	height: 362px;
+	width: 362px;
+	margin: 0 auto;
+	margin-bottom: 1.75rem;
 }
 
 .flex-col-hcenter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .chat-side {
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.15);
-    width: 554px;
-    height: 100%;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.15);
+	width: 554px;
+	height: 100%;
 }
 
 .flex-col-hstart-vstart {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
 
 .clip-contents {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .txt-614 {
-      font-size: 20px;
-    font-family: Fira Code, monospace;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 1);
-    width: 103px;
-    height: 31px;
-    word-wrap: break-word;
+	font-size: 20px;
+	font-family: Fira Code, monospace;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 1);
+	margin: 1rem auto;
+	word-wrap: break-word;
 }
 
-.img_style{
-    width: 319px;
-    height: 100%;
+.img_style {
+	width: 319px;
+	height: 100%;
 }
-
-
 
 .mainCard {
-  background-color: rgba(11, 23, 34, 0.7764705882);
-  padding: 1rem;
-  border-radius: 1rem;
-  height: 100%;
-  outline-color: transparent;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  width: fit-content;
-  margin: auto;
-  margin-top: 40px;
-  height: fit-content;
+	background-color: rgba(11, 23, 34, 0.2764705882);
+	backdrop-filter: blur(16px) saturate(180%);
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	padding: 1rem;
+	padding-bottom: 2rem;
+	border-radius: 1rem;
+	height: 100%;
+	outline-color: transparent;
+	display: flex;
+	flex-wrap: nowrap;
+	width: clamp(10rem, 90%, 80rem);
 }
-  
+
 .flex-row-vcenter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .terminal {
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    min-height: 600px;
-    height: 100%;
-    max-height: 600px;
-    min-width: 350px;
-    width: 600px;
-    background-color: #24232c;
-    border: 3px solid rgba(27, 27, 42, 0.7176470588);
-    border-radius: 0.5rem;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1rem;
-    color: hsl(198deg, 100%, 37%);
-    display: inline-flex;
-    flex-direction:column;
-    align-items: flex-start;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 100%;
+	background-color: #24232c;
+	border: 3px solid rgba(27, 27, 42, 0.7176470588);
+	border-radius: 0.5rem;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1rem;
+	color: hsl(198deg, 100%, 37%);
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+	font-weight: 700;
+	padding-bottom: 0.75rem;
 }
-
+.terminal::-webkit-scrollbar {
+	background-color: transparent;
+}
 .text {
-   text-align: left;
-   margin: 5px;
+	text-align: left;
+	margin: 5px;
+}
+.picture-containe {
+	/* max-height: 500px; */
+	flex: 1;
+}
+@media screen and (max-width: 899px) {
+	.mainCard {
+		flex-direction: column;
+		height: 80vh;
+	}
+	.Button-Box,
+	.Button-Box-Disabled {
+		padding: 0.5rem;
+	}
+	.terminal {
+		margin-bottom: 0.5rem;
+
+		height: min-content;
+	}
+	.terminal.directions {
+		height: 10rem;
+		overflow-y: scroll;
+	}
+	.picture-container {
+		margin-bottom: 1rem;
+	}
 }
 
+@media screen and (min-width: 900px) {
+	.mainCard {
+		flex-direction: row;
+		height: min-content;
+	}
+	.terminal {
+		margin: 0 0.5rem;
+
+		height: 100%;
+		max-height: 500px;
+		/* max-height: 1000px; */
+		flex: 1;
+	}
+	.picture-containe {
+		max-height: 500px;
+	}
+}
