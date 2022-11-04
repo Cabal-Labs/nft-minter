@@ -18,9 +18,9 @@ import { publicProvider } from 'wagmi/providers/public';
 import reportWebVitals from './reportWebVitals';
 
 const { chains, provider } = configureChains(
-  [chain.goerli],
+  [chain.mainnet],
   [
-    alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_KEY_GOERLI }),
+    alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_KEY }),
     publicProvider()
   ]
 );
