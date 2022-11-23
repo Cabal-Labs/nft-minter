@@ -52,9 +52,15 @@ export default function MainBox() {
 			await client
 				.store({
 					image: d,
-					name: `Cabal Labs AI Generated NFT: ${address}`,
+					name: `Cabal Labs AI Generated NFT: Beta Access`,
 					description:
-						"This NFT is created just for you, it uses your wallet addres to come up with art. Welcome to the Cabal...",
+						"This NFT is created just for you, it uses your wallet addres and AI to come up with art. Welcome to the Cabal... ",
+					attributes: [
+						{
+						  "trait_type": "AI Generation", 
+						  "value": `${address}`
+						}, 
+					]	
 				})
 				.then(async (metadata) => {
 					let metadataArray = metadata.url.split("/");
